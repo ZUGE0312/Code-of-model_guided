@@ -108,15 +108,3 @@ class MoG_DUN(nn.Module):
         return Xt
 
 
-def build_net(args):
-    class ModelError(Exception):
-        def __init__(self, msg):
-            self.msg = msg
-
-        def __str__(self):
-            return self.msg
-
-    if args.model_name == "mog-dun":
-        return MoG_DUN(args)
-
-    raise ModelError('Wrong Model!\n')
