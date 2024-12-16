@@ -1,2 +1,2 @@
-# Code-of-model_guided
+# Code-of-demosaicing
 Code
