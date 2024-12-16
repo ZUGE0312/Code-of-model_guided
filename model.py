@@ -150,10 +150,6 @@ if __name__ == '__main__':
     width = 256
     input_size = (1,1,256,256)
     mask_size = (1, 16, 256, 256)
-    mask_path = "G:/Dataset/SCI_data/mask_simu.mat"
-    mask = sio.loadmat(mask_path)['mask']  # [256, 256]
-    mask = torch.from_numpy(mask)
-
     model = SSMP_HIP(args)#.cuda()
     flops, params = thop.profile(model, inputs=(torch.randn(input_size),torch.randn(mask_size)))
     print('Parameters number is ', sum(param.numel() for param in model.parameters()))
